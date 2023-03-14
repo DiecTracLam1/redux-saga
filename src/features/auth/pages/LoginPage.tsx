@@ -2,6 +2,7 @@ import { Box, Button, CircularProgress ,  Paper, Typography } from '@mui/materia
 import { makeStyles } from '@mui/styles';
 import { useAppDispatch, useAppSelector } from 'app/hooks';
 import React, { PureComponent } from 'react';
+import { authActions } from '../authSlice';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,12 +27,12 @@ export function LoginPage() {
 
   const handleLoginClick = () => {
     // TODO: Get username + pwd from login form
-    // dispatch(
-    //   authActions.login({
-    //     username: '',
-    //     password: '',
-    //   })
-    // );
+    dispatch(
+      authActions.login({
+        username: '',
+        password: '',
+      })
+    );
   };
   return (
     <div className={classes.root}>
